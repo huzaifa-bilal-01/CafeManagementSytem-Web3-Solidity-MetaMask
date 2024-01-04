@@ -1,4 +1,5 @@
-pragma solidity ^0.8.17;
+//SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 import "./LoyaltyContract.sol";
 import "./project2.sol";
 import "./promationscontract.sol";
@@ -18,11 +19,8 @@ contract OrderProcessing{
             promotionsanddiscount = _Promotionsanddiscount;
     }
 
-    function placeOrder(string memory itemname, uint256 quantity) external{
-      Menu_Management menuObj = Menu_Management(menuAddress);
-      (uint256 itemPrice, ) = menuObj.menu(itemname);
-
+    function placeOrder(string memory itemname, uint256 quantity) external {
+      Menu_Management obj = Menu_Management(menuAddress);
+      (string memory item_Name, uint256 item_Price, uint256 item_Availability) = obj.menu(itemname);
     }
-
-    
 }

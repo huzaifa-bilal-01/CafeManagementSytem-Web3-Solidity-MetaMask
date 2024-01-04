@@ -18,7 +18,7 @@ contract Menu_Management {
         require(msg.sender==owner, "You are not Cafe Owner :(");
         _;
     }
-    
+
     function addItems(string memory _name, uint256 _price, uint256 _availability) external CafeOwner {
         require(menu[_name].price==0, "Item already exist");
         menu[_name] = MenuItems(_name,_price,_availability);
@@ -30,6 +30,10 @@ contract Menu_Management {
         menu[_name].price = _price;
         menu[_name].availability = _availability;
     }
+
+    function viewAvailability(string memory _name) external view returns(uint256){
+        return menu[_name].availability;
+    } 
 
     function displayMenu() external view returns (string[] memory,uint256[] memory,uint256[] memory) {
         uint256 menu_length = menuItemArr.length;

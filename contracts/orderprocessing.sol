@@ -5,7 +5,7 @@ import "./promationscontract.sol";
 
 contract OrderProcessing{
     address owner;
-    address public menu;
+    address public menuAddress;
     address public loyalty;
     address public promotionsanddiscount;
 
@@ -13,26 +13,14 @@ contract OrderProcessing{
 
     constructor(address _menumanagement,address _loyaltycontract,address _Promotionsanddiscount){
             owner = msg.sender;
-            menu = _menumanagement;
+            menuAddress = _menumanagement;
             loyalty = _loyaltycontract;
             promotionsanddiscount = _Promotionsanddiscount;
     }
 
-    function placeitem(string memory itemname,uint256 price) public {
-      
-      LoyaltyProgram loyaltycontract = LoyaltyProgram(loyalty);
-
-        if( customerpurchase[msg.sender][itemname] == 0){
-              customerpurchase[msg.sender][itemname]=price;
-              loyaltycontract.earnPoints(price);
-
-        }
-        else{
-              customerpurchase[msg.sender][itemname]+=price;  
-              loyaltycontract.earnPoints(price); 
-        }
-      
-        
+    function placeOrder(string memory itemname, uint256 quantity) external{
+      Menu_Management menuObj = Menu_Management(menuAddress);
+      (uint256 itemPrice, ) = menuObj.menu(itemname);
 
     }
 

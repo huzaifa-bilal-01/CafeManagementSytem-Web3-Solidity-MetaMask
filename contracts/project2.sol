@@ -3,13 +3,13 @@ pragma solidity ^0.8.0;
 
 contract Menu_Management {
     address owner;
-    mapping (string => MenuItems) private menu;
+    mapping (string => MenuItems) public menu;
     struct MenuItems {
         string name;
         uint256 price;
         uint256 availability;
     }
-    string[] private menuItemArr;
+    string[] public menuItemArr;
     constructor() {
         owner = msg.sender;
     }

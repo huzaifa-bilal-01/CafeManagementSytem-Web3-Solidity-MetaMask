@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
+import "./ERC20.sol";
 
 contract LoyaltyProgram {
     address public owner;
@@ -43,7 +44,7 @@ contract LoyaltyProgram {
     // Function to allow users to redeem points for rewards
     function redeemPoints(uint256 points) external {
         require(users[msg.sender].points >= points, "Insufficient points");
-        PaymentContract paymentcontract = PaymentContract(payment);
+        FastCoin paymentcontract = FastCoin(payment);
         users[msg.sender].points -= points;
         paymentcontract.transfer( msg.sender, points);
         emit PointsRedeemed(msg.sender, points);

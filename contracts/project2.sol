@@ -7,7 +7,7 @@ contract Menu_Management {
     struct MenuItems {
         string name;
         uint256 price;
-        bool availability;
+        uint256 availability;
     }
     string[] private menuItemArr;
     constructor() {
@@ -18,17 +18,17 @@ contract Menu_Management {
         require(msg.sender==owner, "You are not Cafe Owner :(");
         _;
     }
-    function addItems(string memory _name, uint256 _price, bool _availability) external CafeOwner {
+    function addItems(string memory _name, uint256 _price, uint256 _availability) external CafeOwner {
         require(menu[_name].price==0, "Item already exist");
         menu[_name] = MenuItems(_name,_price,_availability);
         menuItemArr.push(_name);
     }
 
-    function displayMenu() external view returns (string[] memory,uint256[] memory,bool[] memory) {
+    function displayMenu() external view returns (string[] memory,uint256[] memory,uint256[] memory) {
         uint256 menu_length = menuItemArr.length;
         string[] memory name = new string[](menu_length);
         uint256[] memory price = new uint256[](menu_length);
-        bool[] memory availabilitiy = new bool[](menu_length);
+        uint256[] memory availabilitiy = new uint256[](menu_length);
 
         for (uint256 i = 0; i < menu_length; i++) {
             string memory itemName = menuItemArr[i];

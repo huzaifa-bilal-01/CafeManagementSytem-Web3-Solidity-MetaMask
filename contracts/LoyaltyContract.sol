@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-import "./ERC20.sol";
+import "./FastCoin.sol";
 
 contract LoyaltyProgram {
     address public owner;
-      address public payment;
+    address public payment;
     // User structure to store user information
     struct User {
         uint256 points;
@@ -19,21 +19,25 @@ contract LoyaltyProgram {
     event PointsRedeemed(address indexed user, uint256 points);
     // Event emitted when a user advances to a new tier
     event TierChanged(address indexed user, uint256 newTier);
+
     // Constructor to set the contract owner
     constructor(address _paymentcontract) {
         owner = msg.sender;
         payment = _paymentcontract;
-
     }
+
     // Modifier to restrict access to the contract owner
     modifier onlyOwner() {
-        require(msg.sender == owner, "Only the contract owner can call this function");
+        require(
+            msg.sender == owner,
+            "Only the contract owner can call this function"
+        );
         _;
     }
 
     // Function to allow users to earn points
     function earnPoints(uint256 price) external {
-        uint256 points = price/100;
+        uint256 points = price / 100;
         users[msg.sender].points += points;
         emit PointsEarned(msg.sender, points);
 
@@ -46,7 +50,7 @@ contract LoyaltyProgram {
         require(users[msg.sender].points >= points, "Insufficient points");
         FastCoin paymentcontract = FastCoin(payment);
         users[msg.sender].points -= points;
-        paymentcontract.transfer( msg.sender, points);
+        paymentcontract.transfer(msg.sender, points);
         emit PointsRedeemed(msg.sender, points);
 
         // Check if the user should advance to a new tier
@@ -56,14 +60,13 @@ contract LoyaltyProgram {
     // Function to check and update the user's tier based on points
     function checkTier(address userAddress) internal {
         uint256 currentPoints = users[userAddress].points;
-  if(currentPoints >= 1 && currentPoints < 100){
-   // Bronze tier
+        if (currentPoints >= 1 && currentPoints < 100) {
+            // Bronze tier
             if (users[userAddress].tier != 1) {
                 users[userAddress].tier = 1;
                 emit TierChanged(userAddress, 1);
             }
-  }
-      else if (currentPoints >= 100 && currentPoints < 200) {
+        } else if (currentPoints >= 100 && currentPoints < 200) {
             // Silver tier
             if (users[userAddress].tier != 2) {
                 users[userAddress].tier = 2;
@@ -79,7 +82,9 @@ contract LoyaltyProgram {
     }
 
     // Function to get user details
-    function getUserDetails(address userAddress) external view returns (uint256, uint256) {
+    function getUserDetails(
+        address userAddress
+    ) external view returns (uint256, uint256) {
         return (users[userAddress].points, users[userAddress].tier);
     }
 }

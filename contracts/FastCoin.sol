@@ -49,10 +49,10 @@ contract FastCoin is ERC20 {
 
     function transferFrom(address sender,address recepient,uint256 amount) external  returns (bool) {
         require(amount<=balance[sender], "funds are low");
-        require(amount <= approvalLimit[sender][recepient],"funds are low");
+        require(amount <= approvalLimit[sender][msg.sender],"funds are low");
         balance[sender] -= amount;
         balance[recepient] += amount;
-        approvalLimit[sender][recepient] -= amount;
+        approvalLimit[sender][msg.sender] -= amount;
         emit Transfer(sender,recepient,amount);
         return true;
     }

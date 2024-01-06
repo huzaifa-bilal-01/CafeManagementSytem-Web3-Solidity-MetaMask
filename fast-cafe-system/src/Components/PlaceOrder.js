@@ -48,6 +48,11 @@ export default function PlaceOrder() {
             const OrderProcessingContract = new web3.eth.Contract(OrderProcessingABI, OrderProcessingContractAddress);
             const FastCoinsContract = new web3.eth.Contract(FastCoinABI, FastCoinContractAddress);
 
+            const allowance = await OrderProcessingContract.methods.calculateOrderCost(menuNames[selectedRow], itemQuantity).call({ from: userAddress, gas:5000000});
+            console.log(allowance)
+            const numericAllowance = Number(allowance)
+            const check = await FastCoinsContract.methods.approval(OrderProcessingContractAddress, numericAllowance).send({ from:userAddress, gas:5000000})
+
             const outputMsg = await OrderProcessingContract.methods.placeOrder(menuNames[selectedRow], itemQuantity).send({ from: userAddress, gas: 3000000 });
             console.log(outputMsg);
 
@@ -139,7 +144,7 @@ export default function PlaceOrder() {
                     ))}
                 </tbody>
             </table>
-            <div className="input-group mb-3">
+            <div className="input-group mb-3 w-50">
                 <span className="input-group-text">Quantity</span>
                 <input type="number" className="form-control" id="exampleInputPassword1" value={itemQuantity} onChange={itemQuantityChange} aria-describedby="button-addon2" />
                 <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={placeOrder}>Place Order</button>

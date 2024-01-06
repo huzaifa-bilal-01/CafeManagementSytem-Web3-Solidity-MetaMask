@@ -22,61 +22,47 @@ contract OrderProcessing{
             payment = _payment;
     }
 
-    function placeOrder(string memory itemname, uint256 quantity) external returns (string memory) {
-      Menu_Management obj = Menu_Management(menuAddress);
-      FastCoin paymentObj = FastCoin(payment);
-      (string memory item_Name, uint256 item_Price, uint256 item_Availability) = obj.menu(itemname);
-      if (item_Availability <= 0){
-        return ("Item out of stock!");
-      }
-      else if (paymentObj.balanceOf(msg.sender) < item_Price){
-        return ("Not enough Fast Coins!");
-      }
-      
-      if (customerOrders[msg.sender][item_Name] == 0){
-        customerOrders[msg.sender][item_Name] = quantity;
-      }
-      else{
-        customerOrders[msg.sender][item_Name] += quantity;
-      }
+    function calculateOrderCost(string memory item_Name, uint256 quantity) public returns (uint256) {
+    Menu_Management obj = Menu_Management(menuAddress);
 
-      uint256 cost = quantity * item_Price;
-      require(paymentObj.transfer(owner, cost), "Transfer Failed");
+    (string memory itemName, uint256 item_Price, uint256 item_Availability) = obj.menu(item_Name);
 
-      LoyaltyProgram loyaltyProgram = LoyaltyProgram(loyalty);
-      loyaltyProgram.earnPoints(cost);
-     
-      (uint256 userPoints, uint256 userTier) = loyaltyProgram.users(msg.sender);
-      
-      
-      PromotionsSystem promotionsSystem = PromotionsSystem(promotionsanddiscount);
-      uint256 discountPercentage = promotionsSystem.getDiscountPercentage(item_Name);
-      if (discountPercentage > 0){
-          uint256 discount = (cost * discountPercentage) / 100;
-          require(paymentObj.transferFrom(owner, msg.sender, discount), "Transfer Failed");
-      }
-
-      if (userTier == 1) {
-        if (discountPercentage > 0) {
-          uint256 discount = (cost * (discountPercentage + 10) / 100);
-          require(paymentObj.transferFrom(owner, msg.sender, discount), "Transfer Failed");
-        }
-      }
-
-      if (userTier == 2) {
-        if (discountPercentage > 0) {
-          uint256 discount = (cost * (discountPercentage + 20) / 100);
-          require(paymentObj.transferFrom(owner, msg.sender, discount), "Transfer Failed");
-        }
-      }
-
-      if (userTier == 3) {
-        if (discountPercentage > 0) {
-          uint256 discount = (cost * (discountPercentage + 30) / 100);
-          require(paymentObj.transferFrom(owner, msg.sender, discount), "Transfer Failed");
-        }
-      }
-      
-      return ("Success");
+    if (item_Availability <= 0) {
+        revert("Item out of stock!");
     }
+
+    uint256 baseCost = quantity * item_Price;
+
+    LoyaltyProgram loyaltyProgram = LoyaltyProgram(loyalty);
+    loyaltyProgram.earnPoints(baseCost);
+
+    (uint256 userPoints, uint256 userTier) = loyaltyProgram.users(msg.sender);
+
+    PromotionsSystem promotionsSystem = PromotionsSystem(promotionsanddiscount);
+    uint256 discountPercentage = promotionsSystem.getDiscountPercentage(itemName);
+
+    if (discountPercentage > 0) {
+        if (userTier == 1) {
+            discountPercentage += 10;
+        } else if (userTier == 2) {
+            discountPercentage += 20;
+        } else if (userTier == 3) {
+            discountPercentage += 30;
+        }
+
+        uint256 discount = (baseCost * discountPercentage) / 100;
+        return baseCost - discount;
+    }
+
+    return baseCost;
+}
+
+function placeOrder(string memory itemname, uint256 quantity) external returns (string memory) {
+    FastCoin paymentObj = FastCoin(payment);
+
+    uint256 totalCost = calculateOrderCost(itemname, quantity);
+    require(paymentObj.transferFrom(msg.sender, owner, totalCost), "Transfer Failed");
+
+    return ("Success");
+}
 }

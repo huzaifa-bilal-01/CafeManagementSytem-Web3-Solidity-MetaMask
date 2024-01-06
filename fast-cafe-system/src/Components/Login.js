@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
+import Addresses from "../address.json"
 
 export default function Login() {
     const [name, setName] = useState("");
@@ -19,6 +20,12 @@ export default function Login() {
 
         if (accounts.includes(address)) {
             console.log("Login successful!");
+            if (address === Addresses.Owner){
+                console.log("Owner");
+            }
+            else{
+                console.log("Not Owner");
+            }
         } else {
             console.log("Login failed. Address not found on the blockchain.");
         }
@@ -27,8 +34,9 @@ export default function Login() {
 
     return (
         <div className='container center'>
-            <div className="card">
+            <div className="card w-50">
                 <div className="card-body">
+                    <h2>Login</h2>
                     <div className="input-group mb-3">
                         <span className="input-group-text">Name</span>
                         <input type="text" className="form-control" id="exampleInputEmail1" value={name} onChange={(e) => updateName(e.target.value)} />

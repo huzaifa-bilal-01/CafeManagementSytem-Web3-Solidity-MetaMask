@@ -65,18 +65,21 @@ contract LoyaltyProgram {
             if (users[userAddress].tier != 1) {
                 users[userAddress].tier = 1;
                 emit TierChanged(userAddress, 1);
+                
             }
         } else if (currentPoints >= 100 && currentPoints < 200) {
             // Silver tier
             if (users[userAddress].tier != 2) {
                 users[userAddress].tier = 2;
                 emit TierChanged(userAddress, 2);
+                
             }
         } else if (currentPoints >= 200) {
             // Gold tier
             if (users[userAddress].tier != 3) {
                 users[userAddress].tier = 3;
                 emit TierChanged(userAddress, 3);
+                
             }
         }
     }

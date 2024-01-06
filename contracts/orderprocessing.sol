@@ -45,6 +45,37 @@ contract OrderProcessing{
 
       LoyaltyProgram loyaltyProgram = LoyaltyProgram(loyalty);
       loyaltyProgram.earnPoints(cost);
+     
+      (uint256 userPoints, uint256 userTier) = loyaltyProgram.users(msg.sender);
+      
+      
+      PromotionsSystem promotionsSystem = PromotionsSystem(promotionsanddiscount);
+      uint256 discountPercentage = promotionsSystem.getDiscountPercentage(item_Name);
+      if (discountPercentage > 0){
+          uint256 discount = (cost * discountPercentage) / 100;
+          require(paymentObj.transferFrom(owner, msg.sender, discount), "Transfer Failed");
+      }
+
+      if (userTier == 1) {
+        if (discountPercentage > 0) {
+          uint256 discount = (cost * (discountPercentage + 10) / 100);
+          require(paymentObj.transferFrom(owner, msg.sender, discount), "Transfer Failed");
+        }
+      }
+
+      if (userTier == 2) {
+        if (discountPercentage > 0) {
+          uint256 discount = (cost * (discountPercentage + 20) / 100);
+          require(paymentObj.transferFrom(owner, msg.sender, discount), "Transfer Failed");
+        }
+      }
+
+      if (userTier == 3) {
+        if (discountPercentage > 0) {
+          uint256 discount = (cost * (discountPercentage + 30) / 100);
+          require(paymentObj.transferFrom(owner, msg.sender, discount), "Transfer Failed");
+        }
+      }
       
       return ("Success");
     }

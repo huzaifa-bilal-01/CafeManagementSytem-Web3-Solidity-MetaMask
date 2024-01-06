@@ -20,6 +20,7 @@ export default function Login() {
 
         if (accounts.includes(address)) {
             console.log("Login successful!");
+            localStorage.setItem('userAddress', address);
             if (address === Addresses.Owner){
                 console.log("Owner");
             }

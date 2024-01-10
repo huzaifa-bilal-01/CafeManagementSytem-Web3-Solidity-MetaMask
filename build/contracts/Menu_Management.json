@@ -7905,12 +7905,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xC217a480078C5B0BED5BBD7a9Ae0A3F44EDa69f0",
-      "transactionHash": "0x5c20318088b3d069f53dfe80d627f0baaded17b72ac283b9c7f552858cc512c8"
+      "address": "0x2438f7D8bA109809fDfDe4778cC58703B2dE8829",
+      "transactionHash": "0x185ce9dba90960c5b7a3a20d106d8c88383da014aa3b0f52c712ec0d8e9f30f6"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-01-06T17:41:39.832Z",
+  "updatedAt": "2024-01-10T07:50:53.588Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

@@ -22,7 +22,7 @@ contract OrderProcessing{
             payment = _payment;
     }
 
-    function calculateOrderCost(string memory item_Name, uint256 quantity) public returns (uint256) {
+    function calculateOrderCost(string memory item_Name, uint256 quantity) public view returns (uint256) {
     Menu_Management obj = Menu_Management(menuAddress);
 
     (string memory itemName, uint256 item_Price, uint256 item_Availability) = obj.menu(item_Name);
@@ -34,7 +34,6 @@ contract OrderProcessing{
     uint256 baseCost = quantity * item_Price;
 
     LoyaltyProgram loyaltyProgram = LoyaltyProgram(loyalty);
-    loyaltyProgram.earnPoints(baseCost);
 
     (uint256 userPoints, uint256 userTier) = loyaltyProgram.users(msg.sender);
 
@@ -61,6 +60,8 @@ function placeOrder(string memory itemname, uint256 quantity) external returns (
     FastCoin paymentObj = FastCoin(payment);
 
     uint256 totalCost = calculateOrderCost(itemname, quantity);
+    LoyaltyProgram loyaltyProgram = LoyaltyProgram(loyalty);
+    loyaltyProgram.earnPoints(totalCost);
     require(paymentObj.transferFrom(msg.sender, owner, totalCost), "Transfer Failed");
 
     return ("Success");

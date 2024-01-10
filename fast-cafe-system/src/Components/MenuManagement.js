@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import MenuContractData from "../Contracts/Menu_Management.json"
+import PromotionsData from "../Contracts/PromotionsSystem.json"
 import Addresses from "../address.json"
 
 export default function MenuManagement() {
     const MenuABI = MenuContractData.abi;
+    const PromotionsABI = PromotionsData.abi;
     // const MenuContractAddress = "0xc268F46863A88257a935D246C59BDcb82E51c9Dc";
     // const FastCoinContractAddress = "0xdb51E30cB9b130C4D76F50E7BB4CC1a1DbeA6A16";
     // const PromotionContractAddress = "0xd98634A7c880C5fF1d1373bb86a36c5F8df2A0AE";
     // const LoyaltyContractAddress = "0x101d661B762Aaa90F3C728f5B78f8BC33Da4D77E";
     // const OrderProcessingContractAddress = "0x0E7f4Fd494946DA87C626C2De342e6E4Cf8b0a4f";
     const MenuContractAddress = Addresses.MenuContractAddress;
+    const PromotionsContractAddress = Addresses.PromotionContractAddress;
     const ownerAddress = Addresses.Owner;
 
     const [menuNames, setMenuNames] = useState([]);
     const [menuPrices, setMenuPrices] = useState([]);
     const [menuAvailabilities, setMenuAvailabilities] = useState([]);
 
+    const [promotionDiscounts, setPromotionDiscounts] = useState([]);
 
     const [itemName, setItemName] = useState("");
     const [itemPrice, setItemPrice] = useState(0);
@@ -26,13 +30,26 @@ export default function MenuManagement() {
         const fetchContracts = async () => {
             try {
                 const web3 = new Web3('http://127.0.0.1:7545');
-                const MenuContract = new web3.eth.Contract(MenuABI, MenuContractAddress)
+                const MenuContract = new web3.eth.Contract(MenuABI, MenuContractAddress);
+                const PromotionsContract = new web3.eth.Contract(PromotionsABI, PromotionsContractAddress);
+
 
                 const { 0: tempNames, 1: tempPrices, 2: tempAvailabilities } = await MenuContract.methods.displayMenu().call();
 
                 setMenuNames(tempNames);
                 setMenuPrices(tempPrices.map(Number));
                 setMenuAvailabilities(tempAvailabilities.map(Number));
+
+                const tempPromotions = await Promise.all(
+                    tempNames.map(async (name) => {
+                        const discountPercentage = await PromotionsContract.methods.getDiscountPercentage(name).call();
+                        return Number(discountPercentage);
+                    })
+                );
+
+                console.log(tempPromotions)
+
+                setPromotionDiscounts(tempPromotions);
 
                 console.log(MenuContract);
             } catch (error) {
@@ -86,17 +103,43 @@ export default function MenuManagement() {
         setMenuAvailabilities(updatedAvailabilities);
     };
 
+    const promotionDiscountChange = (index, event) => {
+        const updatedDiscounts = [...promotionDiscounts];
+        updatedDiscounts[index] = event.target.value;
+        setPromotionDiscounts(updatedDiscounts);
+    };
+
+    const addPromotion = async (itemName, discount) => {
+        const web3 = new Web3('http://127.0.0.1:7545');
+        const PromotionsContract = new web3.eth.Contract(PromotionsABI, PromotionsContractAddress);
+
+        try {
+            console.log(`Adding promotion for ${itemName} with discount ${discount}`);
+            // Assuming your PromotionsContract has an addPromotion function
+            await PromotionsContract.methods.addPromotion(itemName, discount, 0).send({ from: ownerAddress });
+            console.log(`Promotion for ${itemName} added successfully`);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     const updateMenu = async () => {
         const web3 = new Web3('http://127.0.0.1:7545');
-        const MenuContract = new web3.eth.Contract(MenuABI, MenuContractAddress)
+        const MenuContract = new web3.eth.Contract(MenuABI, MenuContractAddress);
 
         try {
             for (let i = 0; i < menuNames.length; i++) {
                 const tempItemName = menuNames[i];
                 const tempItemPrice = menuPrices[i];
                 const tempItemAvailability = menuAvailabilities[i];
-    
+                const tempPromotionDiscount = promotionDiscounts[i];
+
                 await MenuContract.methods.updateItem(tempItemName, tempItemPrice, tempItemAvailability).send({ from: ownerAddress });
+
+                // If a promotion discount is provided, add/update the promotion
+                if (tempPromotionDiscount > 0) {
+                    await addPromotion(tempItemName, tempPromotionDiscount);
+                }
             }
         } catch (error) {
             console.log(error)
@@ -134,6 +177,7 @@ export default function MenuManagement() {
                             <th scope="col">Item Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
+                            <th scope="col">Promotion Discount</th>
                             <th scope="col"><button type="button" className="btn btn-outline-primary" onClick={updateMenu}>Update</button></th>
                         </tr>
                     </thead>
@@ -154,6 +198,16 @@ export default function MenuManagement() {
                                             className="form-control"
                                             value={menuAvailabilities[index]}
                                             onChange={(e) => updateAvailability(index, e.target.value)}
+                                        />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="input-group">
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            value={promotionDiscounts[index]}
+                                            onChange={(e) => promotionDiscountChange(index, e)}
                                         />
                                     </div>
                                 </td>

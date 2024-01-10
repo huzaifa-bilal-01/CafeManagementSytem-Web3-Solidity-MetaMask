@@ -3388,15 +3388,15 @@
     "absolutePath": "project:/contracts/promotions.sol",
     "exportedSymbols": {
       "PromotionsSystem": [
-        1117
+        1124
       ]
     },
-    "id": 1118,
+    "id": 1125,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 992,
+        "id": 999,
         "literals": [
           "solidity",
           "^",
@@ -3413,9 +3413,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 1117,
+        "id": 1124,
         "linearizedBaseContracts": [
-          1117
+          1124
         ],
         "name": "PromotionsSystem",
         "nameLocation": "69:16:4",
@@ -3424,12 +3424,12 @@
           {
             "constant": false,
             "functionSelector": "8da5cb5b",
-            "id": 994,
+            "id": 1001,
             "mutability": "mutable",
             "name": "owner",
             "nameLocation": "108:5:4",
             "nodeType": "VariableDeclaration",
-            "scope": 1117,
+            "scope": 1124,
             "src": "93:20:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3438,7 +3438,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 993,
+              "id": 1000,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "93:7:4",
@@ -3452,16 +3452,16 @@
           },
           {
             "canonicalName": "PromotionsSystem.Promotion",
-            "id": 999,
+            "id": 1006,
             "members": [
               {
                 "constant": false,
-                "id": 996,
+                "id": 1003,
                 "mutability": "mutable",
                 "name": "discountPercentage",
                 "nameLocation": "217:18:4",
                 "nodeType": "VariableDeclaration",
-                "scope": 999,
+                "scope": 1006,
                 "src": "209:26:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -3470,7 +3470,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 995,
+                  "id": 1002,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "209:7:4",
@@ -3483,12 +3483,12 @@
               },
               {
                 "constant": false,
-                "id": 998,
+                "id": 1005,
                 "mutability": "mutable",
                 "name": "expiryTimestamp",
                 "nameLocation": "254:15:4",
                 "nodeType": "VariableDeclaration",
-                "scope": 999,
+                "scope": 1006,
                 "src": "246:23:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -3497,7 +3497,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 997,
+                  "id": 1004,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "246:7:4",
@@ -3512,30 +3512,30 @@
             "name": "Promotion",
             "nameLocation": "188:9:4",
             "nodeType": "StructDefinition",
-            "scope": 1117,
+            "scope": 1124,
             "src": "181:146:4",
             "visibility": "public"
           },
           {
             "constant": false,
             "functionSelector": "a1aacff2",
-            "id": 1004,
+            "id": 1011,
             "mutability": "mutable",
             "name": "promotions",
             "nameLocation": "424:10:4",
             "nodeType": "VariableDeclaration",
-            "scope": 1117,
+            "scope": 1124,
             "src": "388:46:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$999_storage_$",
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$1006_storage_$",
               "typeString": "mapping(string => struct PromotionsSystem.Promotion)"
             },
             "typeName": {
-              "id": 1003,
+              "id": 1010,
               "keyType": {
-                "id": 1000,
+                "id": 1007,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "396:6:4",
@@ -3547,23 +3547,23 @@
               "nodeType": "Mapping",
               "src": "388:28:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$999_storage_$",
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$1006_storage_$",
                 "typeString": "mapping(string => struct PromotionsSystem.Promotion)"
               },
               "valueType": {
-                "id": 1002,
+                "id": 1009,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 1001,
+                  "id": 1008,
                   "name": "Promotion",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 999,
+                  "referencedDeclaration": 1006,
                   "src": "406:9:4"
                 },
-                "referencedDeclaration": 999,
+                "referencedDeclaration": 1006,
                 "src": "406:9:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Promotion_$999_storage_ptr",
+                  "typeIdentifier": "t_struct$_Promotion_$1006_storage_ptr",
                   "typeString": "struct PromotionsSystem.Promotion"
                 }
               }
@@ -3572,23 +3572,23 @@
           },
           {
             "anonymous": false,
-            "id": 1012,
+            "id": 1019,
             "name": "PromotionAdded",
             "nameLocation": "501:14:4",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1011,
+              "id": 1018,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1006,
+                  "id": 1013,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "productName",
                   "nameLocation": "523:11:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1012,
+                  "scope": 1019,
                   "src": "516:18:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3597,7 +3597,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1005,
+                    "id": 1012,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "516:6:4",
@@ -3610,13 +3610,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1008,
+                  "id": 1015,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "discountPercentage",
                   "nameLocation": "544:18:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1012,
+                  "scope": 1019,
                   "src": "536:26:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3625,7 +3625,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1007,
+                    "id": 1014,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "536:7:4",
@@ -3638,13 +3638,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1010,
+                  "id": 1017,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "expiryTimestamp",
                   "nameLocation": "572:15:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1012,
+                  "scope": 1019,
                   "src": "564:23:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3653,7 +3653,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1009,
+                    "id": 1016,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "564:7:4",
@@ -3671,23 +3671,23 @@
           },
           {
             "anonymous": false,
-            "id": 1016,
+            "id": 1023,
             "name": "PromotionRemoved",
             "nameLocation": "653:16:4",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1015,
+              "id": 1022,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1014,
+                  "id": 1021,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "productName",
                   "nameLocation": "677:11:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1016,
+                  "scope": 1023,
                   "src": "670:18:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3696,7 +3696,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1013,
+                    "id": 1020,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "670:6:4",
@@ -3714,23 +3714,23 @@
           },
           {
             "body": {
-              "id": 1024,
+              "id": 1031,
               "nodeType": "Block",
               "src": "758:37:4",
               "statements": [
                 {
                   "expression": {
-                    "id": 1022,
+                    "id": 1029,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 1019,
+                      "id": 1026,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 994,
+                      "referencedDeclaration": 1001,
                       "src": "769:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -3741,7 +3741,7 @@
                     "operator": "=",
                     "rightHandSide": {
                       "expression": {
-                        "id": 1020,
+                        "id": 1027,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -3752,7 +3752,7 @@
                           "typeString": "msg"
                         }
                       },
-                      "id": 1021,
+                      "id": 1028,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3771,13 +3771,13 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 1023,
+                  "id": 1030,
                   "nodeType": "ExpressionStatement",
                   "src": "769:18:4"
                 }
               ]
             },
-            "id": 1025,
+            "id": 1032,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -3785,18 +3785,18 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1017,
+              "id": 1024,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "755:2:4"
             },
             "returnParameters": {
-              "id": 1018,
+              "id": 1025,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "758:0:4"
             },
-            "scope": 1117,
+            "scope": 1124,
             "src": "744:51:4",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3804,7 +3804,7 @@
           },
           {
             "body": {
-              "id": 1036,
+              "id": 1043,
               "nodeType": "Block",
               "src": "882:109:4",
               "statements": [
@@ -3816,14 +3816,14 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 1031,
+                        "id": 1038,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "expression": {
-                            "id": 1028,
+                            "id": 1035,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -3834,7 +3834,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 1029,
+                          "id": 1036,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3850,11 +3850,11 @@
                         "nodeType": "BinaryOperation",
                         "operator": "==",
                         "rightExpression": {
-                          "id": 1030,
+                          "id": 1037,
                           "name": "owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 994,
+                          "referencedDeclaration": 1001,
                           "src": "915:5:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3869,7 +3869,7 @@
                       },
                       {
                         "hexValue": "4f6e6c792074686520636f6e7472616374206f776e65722063616e2063616c6c20746869732066756e6374696f6e",
-                        "id": 1032,
+                        "id": 1039,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3895,7 +3895,7 @@
                           "typeString": "literal_string \"Only the contract owner can call this function\""
                         }
                       ],
-                      "id": 1027,
+                      "id": 1034,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -3909,7 +3909,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1033,
+                    "id": 1040,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3924,23 +3924,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1034,
+                  "id": 1041,
                   "nodeType": "ExpressionStatement",
                   "src": "893:78:4"
                 },
                 {
-                  "id": 1035,
+                  "id": 1042,
                   "nodeType": "PlaceholderStatement",
                   "src": "982:1:4"
                 }
               ]
             },
-            "id": 1037,
+            "id": 1044,
             "name": "onlyOwner",
             "nameLocation": "870:9:4",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1026,
+              "id": 1033,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "879:2:4"
@@ -3951,7 +3951,7 @@
           },
           {
             "body": {
-              "id": 1074,
+              "id": 1081,
               "nodeType": "Block",
               "src": "1160:273:4",
               "statements": [
@@ -3963,7 +3963,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 1055,
+                        "id": 1062,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3973,17 +3973,17 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 1051,
+                          "id": 1058,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 1049,
+                            "id": 1056,
                             "name": "discountPercentage",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1041,
+                            "referencedDeclaration": 1048,
                             "src": "1179:18:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -3994,7 +3994,7 @@
                           "operator": ">",
                           "rightExpression": {
                             "hexValue": "30",
-                            "id": 1050,
+                            "id": 1057,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -4021,17 +4021,17 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 1054,
+                          "id": 1061,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 1052,
+                            "id": 1059,
                             "name": "discountPercentage",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1041,
+                            "referencedDeclaration": 1048,
                             "src": "1205:18:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -4042,7 +4042,7 @@
                           "operator": "<=",
                           "rightExpression": {
                             "hexValue": "313030",
-                            "id": 1053,
+                            "id": 1060,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -4070,7 +4070,7 @@
                       },
                       {
                         "hexValue": "496e76616c696420646973636f756e742070657263656e74616765",
-                        "id": 1056,
+                        "id": 1063,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -4096,7 +4096,7 @@
                           "typeString": "literal_string \"Invalid discount percentage\""
                         }
                       ],
-                      "id": 1048,
+                      "id": 1055,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -4110,7 +4110,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1057,
+                    "id": 1064,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4125,37 +4125,37 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1058,
+                  "id": 1065,
                   "nodeType": "ExpressionStatement",
                   "src": "1171:91:4"
                 },
                 {
                   "expression": {
-                    "id": 1066,
+                    "id": 1073,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 1059,
+                        "id": 1066,
                         "name": "promotions",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1004,
+                        "referencedDeclaration": 1011,
                         "src": "1273:10:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$999_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$1006_storage_$",
                           "typeString": "mapping(string memory => struct PromotionsSystem.Promotion storage ref)"
                         }
                       },
-                      "id": 1061,
+                      "id": 1068,
                       "indexExpression": {
-                        "id": 1060,
+                        "id": 1067,
                         "name": "productName",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1039,
+                        "referencedDeclaration": 1046,
                         "src": "1284:11:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4169,7 +4169,7 @@
                       "nodeType": "IndexAccess",
                       "src": "1273:23:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Promotion_$999_storage",
+                        "typeIdentifier": "t_struct$_Promotion_$1006_storage",
                         "typeString": "struct PromotionsSystem.Promotion storage ref"
                       }
                     },
@@ -4178,11 +4178,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 1063,
+                          "id": 1070,
                           "name": "discountPercentage",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1041,
+                          "referencedDeclaration": 1048,
                           "src": "1309:18:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -4190,11 +4190,11 @@
                           }
                         },
                         {
-                          "id": 1064,
+                          "id": 1071,
                           "name": "expiryTimestamp",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1043,
+                          "referencedDeclaration": 1050,
                           "src": "1329:15:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -4213,18 +4213,18 @@
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 1062,
+                        "id": 1069,
                         "name": "Promotion",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 999,
+                        "referencedDeclaration": 1006,
                         "src": "1299:9:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_Promotion_$999_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_Promotion_$1006_storage_ptr_$",
                           "typeString": "type(struct PromotionsSystem.Promotion storage pointer)"
                         }
                       },
-                      "id": 1065,
+                      "id": 1072,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4235,17 +4235,17 @@
                       "src": "1299:46:4",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Promotion_$999_memory_ptr",
+                        "typeIdentifier": "t_struct$_Promotion_$1006_memory_ptr",
                         "typeString": "struct PromotionsSystem.Promotion memory"
                       }
                     },
                     "src": "1273:72:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Promotion_$999_storage",
+                      "typeIdentifier": "t_struct$_Promotion_$1006_storage",
                       "typeString": "struct PromotionsSystem.Promotion storage ref"
                     }
                   },
-                  "id": 1067,
+                  "id": 1074,
                   "nodeType": "ExpressionStatement",
                   "src": "1273:72:4"
                 },
@@ -4253,11 +4253,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 1069,
+                        "id": 1076,
                         "name": "productName",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1039,
+                        "referencedDeclaration": 1046,
                         "src": "1376:11:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4265,11 +4265,11 @@
                         }
                       },
                       {
-                        "id": 1070,
+                        "id": 1077,
                         "name": "discountPercentage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1041,
+                        "referencedDeclaration": 1048,
                         "src": "1389:18:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4277,11 +4277,11 @@
                         }
                       },
                       {
-                        "id": 1071,
+                        "id": 1078,
                         "name": "expiryTimestamp",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1043,
+                        "referencedDeclaration": 1050,
                         "src": "1409:15:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4304,18 +4304,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 1068,
+                      "id": 1075,
                       "name": "PromotionAdded",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1012,
+                      "referencedDeclaration": 1019,
                       "src": "1361:14:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,uint256,uint256)"
                       }
                     },
-                    "id": 1072,
+                    "id": 1079,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4330,25 +4330,25 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1073,
+                  "id": 1080,
                   "nodeType": "EmitStatement",
                   "src": "1356:69:4"
                 }
               ]
             },
             "functionSelector": "513a554d",
-            "id": 1075,
+            "id": 1082,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 1046,
+                "id": 1053,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1045,
+                  "id": 1052,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1037,
+                  "referencedDeclaration": 1044,
                   "src": "1150:9:4"
                 },
                 "nodeType": "ModifierInvocation",
@@ -4359,17 +4359,17 @@
             "nameLocation": "1048:12:4",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1044,
+              "id": 1051,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1039,
+                  "id": 1046,
                   "mutability": "mutable",
                   "name": "productName",
                   "nameLocation": "1075:11:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1075,
+                  "scope": 1082,
                   "src": "1061:25:4",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4378,7 +4378,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1038,
+                    "id": 1045,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1061:6:4",
@@ -4391,12 +4391,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1041,
+                  "id": 1048,
                   "mutability": "mutable",
                   "name": "discountPercentage",
                   "nameLocation": "1096:18:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1075,
+                  "scope": 1082,
                   "src": "1088:26:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4405,7 +4405,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1040,
+                    "id": 1047,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1088:7:4",
@@ -4418,12 +4418,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1043,
+                  "id": 1050,
                   "mutability": "mutable",
                   "name": "expiryTimestamp",
                   "nameLocation": "1124:15:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1075,
+                  "scope": 1082,
                   "src": "1116:23:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4432,7 +4432,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1042,
+                    "id": 1049,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1116:7:4",
@@ -4447,12 +4447,12 @@
               "src": "1060:80:4"
             },
             "returnParameters": {
-              "id": 1047,
+              "id": 1054,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1160:0:4"
             },
-            "scope": 1117,
+            "scope": 1124,
             "src": "1039:394:4",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -4460,13 +4460,13 @@
           },
           {
             "body": {
-              "id": 1091,
+              "id": 1098,
               "nodeType": "Block",
               "src": "1551:94:4",
               "statements": [
                 {
                   "expression": {
-                    "id": 1085,
+                    "id": 1092,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4477,24 +4477,24 @@
                     "src": "1562:30:4",
                     "subExpression": {
                       "baseExpression": {
-                        "id": 1082,
+                        "id": 1089,
                         "name": "promotions",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1004,
+                        "referencedDeclaration": 1011,
                         "src": "1569:10:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$999_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$1006_storage_$",
                           "typeString": "mapping(string memory => struct PromotionsSystem.Promotion storage ref)"
                         }
                       },
-                      "id": 1084,
+                      "id": 1091,
                       "indexExpression": {
-                        "id": 1083,
+                        "id": 1090,
                         "name": "productName",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1077,
+                        "referencedDeclaration": 1084,
                         "src": "1580:11:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4508,7 +4508,7 @@
                       "nodeType": "IndexAccess",
                       "src": "1569:23:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Promotion_$999_storage",
+                        "typeIdentifier": "t_struct$_Promotion_$1006_storage",
                         "typeString": "struct PromotionsSystem.Promotion storage ref"
                       }
                     },
@@ -4517,7 +4517,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1086,
+                  "id": 1093,
                   "nodeType": "ExpressionStatement",
                   "src": "1562:30:4"
                 },
@@ -4525,11 +4525,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 1088,
+                        "id": 1095,
                         "name": "productName",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1077,
+                        "referencedDeclaration": 1084,
                         "src": "1625:11:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4544,18 +4544,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 1087,
+                      "id": 1094,
                       "name": "PromotionRemoved",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1016,
+                      "referencedDeclaration": 1023,
                       "src": "1608:16:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 1089,
+                    "id": 1096,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4570,25 +4570,25 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1090,
+                  "id": 1097,
                   "nodeType": "EmitStatement",
                   "src": "1603:34:4"
                 }
               ]
             },
             "functionSelector": "ce654d22",
-            "id": 1092,
+            "id": 1099,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 1080,
+                "id": 1087,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1079,
+                  "id": 1086,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1037,
+                  "referencedDeclaration": 1044,
                   "src": "1541:9:4"
                 },
                 "nodeType": "ModifierInvocation",
@@ -4599,17 +4599,17 @@
             "nameLocation": "1489:15:4",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1078,
+              "id": 1085,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1077,
+                  "id": 1084,
                   "mutability": "mutable",
                   "name": "productName",
                   "nameLocation": "1519:11:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1092,
+                  "scope": 1099,
                   "src": "1505:25:4",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4618,7 +4618,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1076,
+                    "id": 1083,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1505:6:4",
@@ -4633,12 +4633,12 @@
               "src": "1504:27:4"
             },
             "returnParameters": {
-              "id": 1081,
+              "id": 1088,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1551:0:4"
             },
-            "scope": 1117,
+            "scope": 1124,
             "src": "1480:165:4",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -4646,7 +4646,7 @@
           },
           {
             "body": {
-              "id": 1115,
+              "id": 1122,
               "nodeType": "Block",
               "src": "1805:207:4",
               "statements": [
@@ -4656,7 +4656,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1104,
+                    "id": 1111,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4664,24 +4664,24 @@
                     "leftExpression": {
                       "expression": {
                         "baseExpression": {
-                          "id": 1099,
+                          "id": 1106,
                           "name": "promotions",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1004,
+                          "referencedDeclaration": 1011,
                           "src": "1819:10:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$999_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$1006_storage_$",
                             "typeString": "mapping(string memory => struct PromotionsSystem.Promotion storage ref)"
                           }
                         },
-                        "id": 1101,
+                        "id": 1108,
                         "indexExpression": {
-                          "id": 1100,
+                          "id": 1107,
                           "name": "productName",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1094,
+                          "referencedDeclaration": 1101,
                           "src": "1830:11:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -4695,18 +4695,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1819:23:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Promotion_$999_storage",
+                          "typeIdentifier": "t_struct$_Promotion_$1006_storage",
                           "typeString": "struct PromotionsSystem.Promotion storage ref"
                         }
                       },
-                      "id": 1102,
+                      "id": 1109,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "discountPercentage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 996,
+                      "referencedDeclaration": 1003,
                       "src": "1819:42:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -4717,7 +4717,7 @@
                     "operator": ">",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 1103,
+                      "id": 1110,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -4738,14 +4738,14 @@
                     }
                   },
                   "falseBody": {
-                    "id": 1113,
+                    "id": 1120,
                     "nodeType": "Block",
                     "src": "1958:37:4",
                     "statements": [
                       {
                         "expression": {
                           "hexValue": "30",
-                          "id": 1111,
+                          "id": 1118,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -4759,18 +4759,18 @@
                           },
                           "value": "0"
                         },
-                        "functionReturnParameters": 1098,
-                        "id": 1112,
+                        "functionReturnParameters": 1105,
+                        "id": 1119,
                         "nodeType": "Return",
                         "src": "1975:8:4"
                       }
                     ]
                   },
-                  "id": 1114,
+                  "id": 1121,
                   "nodeType": "IfStatement",
                   "src": "1816:179:4",
                   "trueBody": {
-                    "id": 1110,
+                    "id": 1117,
                     "nodeType": "Block",
                     "src": "1866:78:4",
                     "statements": [
@@ -4778,24 +4778,24 @@
                         "expression": {
                           "expression": {
                             "baseExpression": {
-                              "id": 1105,
+                              "id": 1112,
                               "name": "promotions",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1004,
+                              "referencedDeclaration": 1011,
                               "src": "1890:10:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$999_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Promotion_$1006_storage_$",
                                 "typeString": "mapping(string memory => struct PromotionsSystem.Promotion storage ref)"
                               }
                             },
-                            "id": 1107,
+                            "id": 1114,
                             "indexExpression": {
-                              "id": 1106,
+                              "id": 1113,
                               "name": "productName",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1094,
+                              "referencedDeclaration": 1101,
                               "src": "1901:11:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -4809,26 +4809,26 @@
                             "nodeType": "IndexAccess",
                             "src": "1890:23:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Promotion_$999_storage",
+                              "typeIdentifier": "t_struct$_Promotion_$1006_storage",
                               "typeString": "struct PromotionsSystem.Promotion storage ref"
                             }
                           },
-                          "id": 1108,
+                          "id": 1115,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "discountPercentage",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 996,
+                          "referencedDeclaration": 1003,
                           "src": "1890:42:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "functionReturnParameters": 1098,
-                        "id": 1109,
+                        "functionReturnParameters": 1105,
+                        "id": 1116,
                         "nodeType": "Return",
                         "src": "1883:49:4"
                       }
@@ -4838,7 +4838,7 @@
               ]
             },
             "functionSelector": "e145d46c",
-            "id": 1116,
+            "id": 1123,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -4846,17 +4846,17 @@
             "nameLocation": "1724:21:4",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1095,
+              "id": 1102,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1094,
+                  "id": 1101,
                   "mutability": "mutable",
                   "name": "productName",
                   "nameLocation": "1760:11:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
+                  "scope": 1123,
                   "src": "1746:25:4",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4865,7 +4865,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1093,
+                    "id": 1100,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1746:6:4",
@@ -4880,17 +4880,17 @@
               "src": "1745:27:4"
             },
             "returnParameters": {
-              "id": 1098,
+              "id": 1105,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1097,
+                  "id": 1104,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
+                  "scope": 1123,
                   "src": "1796:7:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4899,7 +4899,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1096,
+                    "id": 1103,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1796:7:4",
@@ -4913,14 +4913,14 @@
               ],
               "src": "1795:9:4"
             },
-            "scope": 1117,
+            "scope": 1124,
             "src": "1715:297:4",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1118,
+        "scope": 1125,
         "src": "60:1955:4",
         "usedErrors": []
       }
@@ -4935,12 +4935,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xf2F0f2BFBb1f38bF2D67580307076423976e25C4",
-      "transactionHash": "0x3d63826a12c72cf7cb9d413d4f17e10b2f5b862f261489cef979b25a515c897f"
+      "address": "0x0090d1f02f4961bd38e9acCc5e729636aE9E277C",
+      "transactionHash": "0xc7464a24550886ad5cb95490a714ab29b8d419a07451cdb41097e0319ea943f8"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-01-06T17:41:39.871Z",
+  "updatedAt": "2024-01-10T07:50:53.618Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

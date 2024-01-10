@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import Addresses from "../address.json"
+import { useNavigate } from 'react-router';
 
 export default function Login() {
+    const navigate = useNavigate();
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
 
@@ -23,9 +25,11 @@ export default function Login() {
             localStorage.setItem('userAddress', address);
             if (address === Addresses.Owner){
                 console.log("Owner");
+                navigate('/menuManagement');
             }
             else{
                 console.log("Not Owner");
+                navigate('/placeOrder');
             }
         } else {
             console.log("Login failed. Address not found on the blockchain.");
@@ -35,6 +39,7 @@ export default function Login() {
 
     return (
         <div className='container center'>
+            <h1>FAST Cafe System</h1>
             <div className="card w-50">
                 <div className="card-body">
                     <h2>Login</h2>

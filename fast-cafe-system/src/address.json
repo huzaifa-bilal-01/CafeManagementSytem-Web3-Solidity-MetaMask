@@ -1,8 +1,8 @@
 {
-    "MenuContractAddress":"0xC217a480078C5B0BED5BBD7a9Ae0A3F44EDa69f0",
-    "FastCoinContractAddress":"0x0bE565fB8dA57B88A29Cc646908f4c332433b5Ce",
-    "PromotionContractAddress":"0xf2F0f2BFBb1f38bF2D67580307076423976e25C4",
-    "LoyaltyContractAddress":"0x1c44BB156b85971E2F2A3075E383DEe35eFcC98a",
-    "OrderProcessingContractAddress":"0x352eAd9f604c71e0560EF43216CEaa21667Fa43f",
+    "MenuContractAddress":"0x2438f7D8bA109809fDfDe4778cC58703B2dE8829",
+    "FastCoinContractAddress":"0x7ce12110B9A24C1D68969f795934FCD0BfFCc666",
+    "PromotionContractAddress":"0x0090d1f02f4961bd38e9acCc5e729636aE9E277C",
+    "LoyaltyContractAddress":"0x3220c3De708663786BEcAfcCD2fdF9DC2adAaDA8",
+    "OrderProcessingContractAddress":"0x91041c8CC29c3Cc5e4Af51F472bc82F57393a381",
     "Owner":"0xf24EAa1Fb1033Bc6Bc2653fb62A865A3CfA26F1a"
 }

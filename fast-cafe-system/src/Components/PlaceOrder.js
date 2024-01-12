@@ -61,10 +61,12 @@ export default function PlaceOrder() {
             const web3 = new Web3('http://127.0.0.1:7545');
             const OrderProcessingContract = new web3.eth.Contract(OrderProcessingABI, OrderProcessingContractAddress);
             const FastCoinsContract = new web3.eth.Contract(FastCoinABI, FastCoinContractAddress);
+            const LoyaltyProgramContract = new web3.eth.Contract(LoyaltyABI, LoyaltyContractAddress);
 
             const allowance = await OrderProcessingContract.methods.calculateOrderCost(menuNames[selectedRow], itemQuantity).call({ from: userAddress, gas: 5000000 });
             console.log(allowance)
             const numericAllowance = Number(allowance)
+            await LoyaltyProgramContract.methods.earnPoints(numericAllowance).send({ from: userAddress, gas:5000000 })
             const check = await FastCoinsContract.methods.approval(OrderProcessingContractAddress, numericAllowance).send({ from: userAddress, gas: 5000000 })
 
             const outputMsg = await OrderProcessingContract.methods.placeOrder(menuNames[selectedRow], itemQuantity).send({ from: userAddress, gas: 3000000 });
@@ -82,7 +84,6 @@ export default function PlaceOrder() {
             const balanceAsNumber = Number(tempTokens);
             setFastCoins(balanceAsNumber);
 
-            const LoyaltyProgramContract = new web3.eth.Contract(LoyaltyABI, LoyaltyContractAddress);
             const { 0: points, 1: tier } = await LoyaltyProgramContract.methods.getUserDetails(userAddress).call();
             setLoyaltyPoints(Number(points));
             setLoyaltyTier(Number(tier));
